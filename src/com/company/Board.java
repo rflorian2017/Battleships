@@ -15,8 +15,12 @@ public class Board {
         initBoard(lines, columns);
     }
 
-    private void initBoard(int line, int column) {
-        gameBoard = new String[line][column];
+    private void initBoard(int lines, int columns) {
+        gameBoard = new String[lines][columns];
+    }
+
+    public void initBoard() {
+        gameBoard = new String[this.lines][this.columns];
     }
 
     public String displayBoard() {

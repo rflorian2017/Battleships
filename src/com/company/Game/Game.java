@@ -1,5 +1,6 @@
 package com.company.Game;
 
+import com.company.Board;
 import com.company.Move;
 import com.company.Player.Player;
 import com.company.ship.GameBattleships;
@@ -11,6 +12,10 @@ public class Game implements GameBattleships {
     private int currentRound;
     private List<Player> players;
     private List<Ship> ships;
+    private Board firstPlayerOwnBoard;
+    private Board firstPlayerEnemyBoard;
+    private Board secondPlayerOwnBoard;
+    private Board secondPlayerEnemyBoard;
 
     //default constructor
     public Game() {
@@ -18,6 +23,15 @@ public class Game implements GameBattleships {
     }
 
     public void startGame(Player p1, Player p2) {
+        //TODO: Check in the future if the player does not already exist in the list
+        players.add(p1);
+        players.add(p2);
+
+        firstPlayerEnemyBoard.initBoard();
+        firstPlayerOwnBoard.initBoard();
+        secondPlayerEnemyBoard.initBoard();
+        secondPlayerOwnBoard.initBoard();
+
 
     }
 
