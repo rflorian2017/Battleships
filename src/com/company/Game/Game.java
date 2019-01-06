@@ -11,7 +11,7 @@ import java.util.List;
 public class Game implements GameBattleships {
     private int currentRound;
     private List<Player> players;
-    private List<Ship> ships;
+
     private Board firstPlayerOwnBoard;
     private Board firstPlayerEnemyBoard;
     private Board secondPlayerOwnBoard;
@@ -32,7 +32,11 @@ public class Game implements GameBattleships {
         secondPlayerEnemyBoard.initBoard();
         secondPlayerOwnBoard.initBoard();
 
+        p1.getShips();
+        for (Ship ship:p1.getShips()
+             ) {
 
+        }
     }
 
     @Override

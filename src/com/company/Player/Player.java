@@ -1,9 +1,18 @@
 package com.company.Player;
 
+import com.company.ship.Ship;
+
+import java.util.List;
+
 public class Player {
 
     private String PlayerName;
     private int Score;
+    private List<Ship> ships;
+
+    public List<Ship> getShips() {
+        return ships;
+    }
 
     public int getScore() {
         return Score;
