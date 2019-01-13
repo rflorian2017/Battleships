@@ -31,12 +31,13 @@ public class Board {
         displayString = Utility.putSpaces(2) +
                 Utility.showNumbers(columns, 2) + "\n";
         for (int i = 0; i < lines; i++) {
-            displayString += Utility.showLetterInAlphabet(i+1) + " ";
+            displayString += Utility.showLetterInAlphabet(i+1) + " " ;
             for (int j = 0; j < columns; j++) {
-                displayString += emptyCell;
+                displayString += emptyCell ;
                 //displayString = displayString + emptyCell + " ";
             }
-            displayString += "\n";
+            // TODO: here we can decide what happens at end of a line (EOL)
+            displayString += "\n" ;
         }
         return displayString;
     }

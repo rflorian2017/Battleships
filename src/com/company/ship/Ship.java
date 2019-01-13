@@ -5,9 +5,10 @@ import com.company.model.Coordinate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ship {
+abstract public class Ship {
     private String name;
     private int size;
+    private boolean alreadyPlaced;
     //retains list of coordinates
     private List<Coordinate> coordinateList;
 
@@ -20,6 +21,20 @@ public class Ship {
         this.name=name;
         this.size=size;
         coordinateList = new ArrayList<Coordinate>();
+        this.alreadyPlaced = false;
+    }
+
+    public void addCoordinateToList(Coordinate coordinate1) {
+        coordinateList.add(coordinate1);
+    }
+
+    public void clearShipCoordinateList() {
+        coordinateList = new ArrayList<Coordinate>();
+        alreadyPlaced = false;
+    }
+
+    public List<Coordinate> getCoordinateList() {
+        return coordinateList;
     }
 
     public int getSize() {
@@ -30,5 +45,11 @@ public class Ship {
         this.size = size;
     }
 
+    public boolean isAlreadyPlaced() {
+        return alreadyPlaced;
+    }
 
+    public void setAlreadyPlaced(boolean alreadyPlaced) {
+        this.alreadyPlaced = alreadyPlaced;
+    }
 }

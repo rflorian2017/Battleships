@@ -1,7 +1,8 @@
 package com.company.Player;
 
-import com.company.ship.Ship;
+import com.company.ship.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -24,6 +25,12 @@ public class Player {
 
     public Player(String name) {
         PlayerName = name;
+        ships = new ArrayList<Ship>();
+        ships.add( new Boat());
+        ships.add( new Fregate());
+        ships.add( new Fregate());
+        ships.add( new Carrier());
+        ships.add( new Destroyer());
     }
 
     public void setName(String name) {
@@ -34,5 +41,20 @@ public class Player {
         return PlayerName;
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Player) {
+            /*
+            cand apelam din exterior, pe un obiect player aceasta metoda
+            si avem ca parametru un alt obiect Player, ele sunt egale daca au acelasi nume
+             */
+            if(this.getName().equals( ((Player)obj).getName() ) ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
+    }
 }
